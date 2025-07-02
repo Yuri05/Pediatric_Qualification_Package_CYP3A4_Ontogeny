@@ -1,43 +1,43 @@
 {
-    "$schema": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/v2.3/schemas/OSP_Qualification_Plan_Schema.json",
+    "$schema": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/v3.3/schemas/OSP_Qualification_Plan_Schema.json",
     "Projects": [
         {
             "Id": "Alfentanil",
-            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Alfentanil-Model/v2.2/Alfentanil-Model.json",
+            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Alfentanil-Model/v3.0/Alfentanil-Model.json",
             "BuildingBlocks": []
         },
         {
             "Id": "Sufentanil",
-            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Sufentanil-Model/v1.2/Sufentanil.json",
+            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Sufentanil-Model/v3.0/Sufentanil.json",
             "BuildingBlocks": []
         },
         {
             "Id": "Alfentanil-Pediatrics",
             "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Alfentanil-Pediatrics/v1.0/Alfentanil-Pediatrics.json",
             "BuildingBlocks": [
-              {
-                "Type": "Compound",
-                "Name": "Alfentanil",
-                "Project": "Alfentanil"
-              } 
+                {
+                    "Type": "Compound",
+                    "Name": "Alfentanil",
+                    "Project": "Alfentanil"
+                }
             ]
         },
         {
             "Id": "Sufentanil-Pediatrics",
             "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Sufentanil-Pediatrics/v1.0/Sufentanil-Pediatrics.json",
             "BuildingBlocks": [
-              {
-                "Type": "Compound",
-                "Name": "Sufentanil",
-                "Project": "Sufentanil"
-              } 
+                {
+                    "Type": "Compound",
+                    "Name": "Sufentanil",
+                    "Project": "Sufentanil"
+                }
             ]
-        }   
+        }
     ],
     "ObservedDataSets": [
         {
             "Id": "PK-Parameter",
-            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Database-for-observed-data/v1.4/Pediatrics.csv",
+            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Database-for-observed-data/v1.7/Pediatrics.csv",
             "Type": "PKRatio"
         }
     ],
@@ -159,8 +159,10 @@
         "PKRatioPlots": [
             {
                 "Title": "Overall predictivity of the PBPK models. Open circles represent mean ratios of PBPK predicted AUC over observed AUC of all drugs in children 3.6 months to 9 years old. Blue dashed lines and red dotted lines represent the 1.5-fold and 2-fold error, respectively.",
-                "PKParameter": "AUC",
-                "SectionId": 3,
+                "PKParameters": [
+                    "AUC"
+                ],
+                "SectionReference": "pediatric-translation-qualification-results",
                 "Groups": [
                     {
                         "Color": "#000000",
@@ -446,8 +448,10 @@
             },
             {
                 "Title": "Overall predictivity of the sufentanil PBPK model. Open circles represent mean ratios of PBPK predicted AUC over observed AUC of sufentanil in children 5 months to 8.75 years old. Blue dashed lines and red dotted lines represent the 1.5-fold and 2-fold error, respectively.",
-                "PKParameter": "AUC",
-                "SectionId": 31,
+                "PKParameters": [
+                    "AUC"
+                ],
+                "SectionReference": "sufentanil-pk-ratios",
                 "Groups": [
                     {
                         "Color": "#000000",
@@ -607,8 +611,10 @@
             },
             {
                 "Title": "Overall predictivity of the alfentanil PBPK model. Open circles represent mean ratios of PBPK predicted AUC over observed AUC of alfentanil in children 3.6 months to 9 years old. Blue dashed lines and red dotted lines represent the 1.5-fold and 2-fold error, respectively.",
-                "PKParameter": "AUC",
-                "SectionId": 33,
+                "PKParameters": [
+                    "AUC"
+                ],
+                "SectionReference": "alfentanil-pk-ratios",
                 "Groups": [
                     {
                         "Color": "#000000",
@@ -751,66 +757,66 @@
             {
                 "Project": "Sufentanil-Pediatrics",
                 "Simulation": "Guay 1991 patient 11",
-                "SectionId": 32
+                "SectionReference": "sufentanil-ct-profiles"
             },
             {
                 "Project": "Sufentanil-Pediatrics",
                 "Simulation": "Guay 1991 patient 3",
-                "SectionId": 32
+                "SectionReference": "sufentanil-ct-profiles"
             },
             {
                 "Project": "Sufentanil-Pediatrics",
                 "Simulation": "Guay 1991 patient 8",
-                "SectionId": 32
+                "SectionReference": "sufentanil-ct-profiles"
             },
             {
                 "Project": "Alfentanil-Pediatrics",
                 "Simulation": "den Holländer 1992 ind 3",
-                "SectionId": 34
+                "SectionReference": "alfentanil-ct-profiles"
             },
             {
                 "Project": "Alfentanil-Pediatrics",
                 "Simulation": "Meistelman 1987 children",
-                "SectionId": 34
+                "SectionReference": "alfentanil-ct-profiles"
             }
         ]
     },
     "Sections": [
         {
-            "Id": 2,
-            "Title": "1 Introduction to Pediatric Translation and CYP3A4 Ontogeny Qualification",
+            "Reference": "introduction",
+            "Title": "Introduction to Pediatric Translation and CYP3A4 Ontogeny Qualification",
             "Content": "Content/Introduction.md"
         },
         {
-            "Id": 3,
-            "Title": "2 Pediatric translation qualification results",
+            "Reference": "pediatric-translation-qualification-results",
+            "Title": "Pediatric translation qualification results",
             "Content": "Content/Translation.md",
             "Sections": [
                 {
-                    "Id": 31,
+                    "Reference": "sufentanil-pk-ratios",
                     "Content": "Content/Sufentanil_children.md",
-                    "Title": "2.1 Sufentanil PK Ratio tables and Figures"
+                    "Title": "Sufentanil PK Ratio tables and Figures"
                 },
                 {
-                    "Id": 32,
+                    "Reference": "sufentanil-ct-profiles",
                     "Content": "Content/Concentration_time_profiles_children.md",
-                    "Title": "2.2 Sufentanil Concentration-Time profiles in Children"
+                    "Title": "Sufentanil Concentration-Time profiles in Children"
                 },
                 {
-                    "Id": 33,
+                    "Reference": "alfentanil-pk-ratios",
                     "Content": "Content/Alfentanil_children.md",
-                    "Title": "2.3 Alfentanil PK Ratio tables and Figures"
+                    "Title": "Alfentanil PK Ratio tables and Figures"
                 },
                 {
-                    "Id": 34,
+                    "Reference": "alfentanil-ct-profiles",
                     "Content": "Content/Concentration_time_profiles_children.md",
-                    "Title": "2.4 Alfentanil Concentration-Time profiles in Children"
+                    "Title": "Alfentanil Concentration-Time profiles in Children"
                 }
             ]
         },
         {
-            "Id": 5,
-            "Title": "3 References",
+            "Reference": "main-references",
+            "Title": "References",
             "Content": "Content/References.md",
             "Sections": []
         }

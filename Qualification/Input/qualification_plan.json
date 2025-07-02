@@ -8,12 +8,12 @@
         },
         {
             "Id": "Sufentanil",
-            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Sufentanil-Model/v3.0/Sufentanil.json",
+            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Sufentanil-Model/v2.0/Sufentanil.json",
             "BuildingBlocks": []
         },
         {
             "Id": "Alfentanil-Pediatrics",
-            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Alfentanil-Pediatrics/v1.0/Alfentanil-Pediatrics.json",
+            "Path": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/Alfentanil-Pediatrics/v2.0/Alfentanil-Pediatrics.json",
             "BuildingBlocks": [
                 {
                     "Type": "Compound",
